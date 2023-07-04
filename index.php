@@ -1,10 +1,4 @@
 <?php 
-    include_once __DIR__ . "/utilities/function.php";
-
-    $passwordLength = null;
-    if(!empty($_GET["passwordLength"])){
-        $passwordLength = $_GET["passwordLength"];
-    };
 
 ?>
 
@@ -20,20 +14,15 @@
     <h1 class="text-center">Password Generator 2.0</h1>
     <div class="row">
         <div class="col-8 mx-auto">
-            <form action="./index.php" methods="get" class="card d-md-block p-2 mb-2 bg-info">
+            <form action="./server.php" methods="get" class="card d-md-block p-2 mb-2 bg-info">
                 <div class="mb-3">
-                    <label for="passwordLenght" class="form-label">Email address</label>
+                    <label for="passwordLenght" class="form-label">Choose the length of your password</label>
                     <input type="number" class="form-control w-25" id="passwordLenght" name="passwordLength">
                 </div>
                 <button type="submit" class="btn btn-primary">
                     Generates
                 </button>
             </form>
-            <div class="output card p-2 bg-info">
-                <h2>La tua nuova password</h2>
-                <p> <strong> <?php echo generateRandomPassword($passwordLength)?> </strong> </p>
-            </div>
-
         </div>
     </div>    
 </body>
