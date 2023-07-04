@@ -1,4 +1,8 @@
 <?php 
+    $passwordLength = null;
+    if(!empty($_GET["passwordLength"])){
+        $passwordLength = $_GET["passwordLength"];
+    };
 
 ?>
 
@@ -12,13 +16,18 @@
 </head>
 <body>
     <h1>Password Generator 2.0</h1>
-    <form>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div class="row">
+        <div class="col-8">
+            <form action="./index.php" methods="get">
+                <div class="mb-3">
+                    <label for="passwordLenght" class="form-label">Email address</label>
+                    <input type="number" class="form-control w-25" id="passwordLenght" name="passwordLength">
+                </div>
+                <button type="submit">
+                    Generates
+                </button>
+            </form>
         </div>
-    </form>
-    
-    
+    </div>    
 </body>
 </html>
